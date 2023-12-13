@@ -1,15 +1,20 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsPlus, BsEyeFill } from "react-icons/bs";
+import { ProductContext } from "../contexts/ProductContext";
+
 
 import { CartContext } from "../contexts/CartContext";
 
 const Product = ({ product }) => {
   // console.log(product);
   const { addToCart } = useContext(CartContext)
+  const { sortedProducts } = useContext(ProductContext)
+
 
   const { id, image, category, title, price } = product;
   return (
+
     <div>
       <div className="border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition">
         <div className="w-full h-full flex justify-center items-center">
@@ -47,5 +52,6 @@ const Product = ({ product }) => {
     </div>
   );
 };
-
+  
 export default Product;
+

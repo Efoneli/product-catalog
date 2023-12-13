@@ -1,14 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
 import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
-import { BsBag } from "react-icons/bs";
+import { BsAlarm, BsCart, BsForwardFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Logo from "../img/logo.svg";
+import { SignUpContext } from "../contexts/SignUpContext";
+import { ProductContext } from "../contexts/ProductContext";
 
 const Header = () => {
-  const [ isActive, setIsActive ] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
   const { itemAmount } = useContext(CartContext);
+  const { loggedinUser, logOut } = useContext(SignUpContext);
+  const { categoryFilter, filterProducts, sortProducts, sortCriteria  } = useContext(ProductContext);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -25,16 +29,61 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between h-full">
         <Link to={"/"}>
           <div>
-            <img className="w-[40px]" src={Logo} alt="" />
+            <img className="w-[35px]" src={Logo} alt="" />
           </div>
         </Link>
-        <div
-          onClick={() => setIsOpen(!isOpen)}
-          className="cursor-pointer flex relative max-w-[50px]"
-        >
-          <BsBag className="text-2xl" />
-          <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
-            {itemAmount}
+
+          <div>
+          <div>
+          <label className="mr-2">Category:</label>
+          <select
+            className="px-2 py-1 border border-gray-400 rounded"
+            onChange={(e) => filterProducts(e.target.value)}
+            value={categoryFilter}
+          >
+            <option value="All">All</option>
+            <option value="Electronics">{categoryFilter}</option>
+          </select>
+        </div>
+          </div>
+       
+          <div>
+          <label className="mr-2">Sort by:</label>
+          <select
+            className="px-2 py-1 border border-gray-400 rounded"
+            onChange={(e) => sortProducts(e.target.value)}
+            value={sortCriteria}
+          >
+            <option value="Default">Default</option>
+            <option value="PriceLowToHigh">Price - Low to High</option>
+            <option value="PriceHighToLow">Price - High to Low</option>
+            {/* Add more sorting criteria as needed */}
+          </select>
+        </div>
+
+        <div className="flex items-center justify-center">
+        {loggedinUser === null ? (
+          <div className="px-1">
+            <Link to="/signup">SignUp</Link>
+          </div>
+        ) : (
+          loggedinUser.email
+        )}
+          <div
+            onClick={() => setIsOpen(!isOpen)}
+            className="cursor-pointer flex relative max-w-[50px] px-1"
+          >
+            <BsCart className="text-2xl" />
+            <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
+              {itemAmount}
+            </div>
+          </div>
+          <div className="mx-4"
+            onClick={() => {
+              logOut();
+            }}
+          >
+            <BsForwardFill />
           </div>
         </div>
       </div>
