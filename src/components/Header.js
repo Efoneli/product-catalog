@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
-import { BsAlarm, BsCart, BsForwardFill } from "react-icons/bs";
+import { BsCart, BsForwardFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Logo from "../img/logo.svg";
 import { SignUpContext } from "../contexts/SignUpContext";
-import { ProductContext } from "../contexts/ProductContext";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
