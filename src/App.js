@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import SignUp from "./pages/SignUp";
 import Checkout from "./components/Checkout";
 import Layouts from "./layouts";
+import SubHeader from "./components/SubHeader";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Router>
         <Layouts>
         <Header /> 
+        <SubHeader />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />

@@ -2,10 +2,22 @@
 
 - git clone <https://github.com/Efoneli/product-catalog.git>
 
-- cd product-catalog
+- cd product-catalog: navigate to the directory using the terminal 
 
-- npm install
+- npm install: to install all dependencies.
 
-- npm start
+- npm start: this will start the development server. Open your web browser and visit http://localhost:3000 to see the running React app
 
-- Sign up using any email, and search for products using the select inputs.
+### how to use the app
+
+- Sign up using any email
+
+- Search for products using the select inputs.
+
+- Use the Plus button to add products to cart.
+
+- Use the eye icon to view product details
+
+- Use the cart icon to see products
+
+- use the rightArrow to logout
