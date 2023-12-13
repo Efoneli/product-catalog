@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../contexts/ProductContext";
-import { SidebarContext } from "../contexts/SidebarContext";
 import { SignUpContext } from "../contexts/SignUpContext";
 
 const SubHeader = () => {
   const [isActive, setIsActive] = useState(false);
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
   const { loggedinUser } = useContext(SignUpContext);
 
   const { categoryFilter, filterProducts, sortProducts, sortCriteria } =
@@ -16,16 +14,6 @@ const SubHeader = () => {
       window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
     });
   });
-
-
-
-//   {loggedinUser === null ? (
-//     <div className="px-1">
-//       <Link to="/signup">SignUp</Link>
-//     </div>
-//   ) : (
-//     loggedinUser.email
-//   )}
 
   return (
     <>
@@ -44,7 +32,7 @@ const SubHeader = () => {
                   value={categoryFilter}
                 >
                   <option value="All">All</option>
-                  <option value="Electronics">{categoryFilter}</option>
+                  <option value="categories">{categoryFilter}</option>
                 </select>
               </div>
             </div>
