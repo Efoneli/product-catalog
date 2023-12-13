@@ -1,11 +1,11 @@
 # ecommerce-product-catalogue
 
-# git clone <https://github.com/Efoneli/product-catalog.git>
+- git clone <https://github.com/Efoneli/product-catalog.git>
 
-# cd product-catalog
+- cd product-catalog
 
-# npm install
+- npm install
 
-# npm start
+- npm start
 
-Sign up using any email, and search for products using the select inputs.
+- Sign up using any email, and search for products using the select inputs.
