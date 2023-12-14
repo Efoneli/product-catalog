@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-export const ProductContext = createContext();
+export const ProductContext = createContext();    
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([])
@@ -25,7 +25,6 @@ const ProductProvider = ({ children }) => {
     const catUrl = 'https://fakestoreapi.com/products/categories'
         const response = await fetch(catUrl)
       const catData = await response.json()
-      console.log(catData)
       setCategoryFilter(catData)
     }
     fetchCategories()

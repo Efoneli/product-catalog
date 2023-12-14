@@ -10,14 +10,16 @@
 
 ### how to use the app
 
-- Sign up using any email
+- Sign up using any email and password.
 
 - Search for products using the select inputs.
 
 - Use the Plus button to add products to cart.
 
-- Use the eye icon to view product details
+- Use the eye icon to view product details.
 
-- Use the cart icon to see products
+- Use the cart icon to see products.
 
-- use the rightArrow to logout
+- Checkout button leads to the checkout page.
+
+- use the rightArrow to logout.

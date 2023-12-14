@@ -27,7 +27,7 @@ const SignUpProvider = ({ children }) => {
 
 
     const handleSubmit = async (e) => {
-        const url = 'https://fakestoreapi.com/auth/login'
+        // const url = 'https://fakestoreapi.com/auth/login'
         e.preventDefault()
 
         console.log(formData)
